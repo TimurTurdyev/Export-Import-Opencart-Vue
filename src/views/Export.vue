@@ -1,7 +1,14 @@
 <template>
   <div>
     <div class="content">
-      <h1>Экспорт товаров</h1>
+      <div class="columns is-vcentered">
+        <div class="column is-8">
+          <h1 class="is-pulled-left">Экспорт товаров</h1>
+        </div>
+        <div class="column has-text-right">
+          <button type="button" class="button is-warning">Export</button>
+        </div>
+      </div>
     </div>
     <Products/>
   </div>

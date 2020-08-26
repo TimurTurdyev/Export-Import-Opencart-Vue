@@ -11,6 +11,7 @@
         </th>
         <th>Image</th>
         <th>Title</th>
+        <th>Sku</th>
         <th>Price</th>
         <th>Action</th>
       </tr>
@@ -24,8 +25,9 @@
           </label>
         </td>
         <td><img src="https://i.picsum.photos/id/83/200/200.jpg?hmac=PWpSDFTveI1bSJjmrf_vnw4ipqEELicSPpDf8jb89FI"
-                 class="image is-48x48"></td>
+        class="image is-48x48"></td>
         <td>{{ product.title }}</td>
+        <td>00kn</td>
         <td>500</td>
         <td>
           <div class="buttons">
