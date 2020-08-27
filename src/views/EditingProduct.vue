@@ -7,7 +7,7 @@
         </div>
         <div class="column has-text-right">
           <button type="button" class="button is-warning">Сохранить</button>
-          <button type="button" class="button">Вернуться</button>
+          <button type="button" class="button" v-on:click.prevent="$router.back()">Вернуться</button>
         </div>
       </div>
     </div>

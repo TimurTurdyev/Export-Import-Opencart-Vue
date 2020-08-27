@@ -15,12 +15,15 @@ const actions = {
         console.log(payload)
         const result = await product.get(payload)
         commit('product', result)
-    }
+    },
 }
 
 // mutations
 const mutations = {
     product(state, product) {
+        state.product = product
+    },
+    editing(state, product) {
         state.product = product
     }
 }

@@ -32,7 +32,8 @@
         <td>
           <div class="buttons">
             <button class="button is-info">Info</button>
-            <button class="button is-success">Edit</button>
+            <router-link :to="'product/' +  product.id" class="button is-success">Edit
+            </router-link>
           </div>
         </td>
       </tr>

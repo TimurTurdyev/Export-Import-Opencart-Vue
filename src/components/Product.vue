@@ -5,37 +5,40 @@
         <div class="field">
           <label class="label">Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Text Name">
+            <input class="input" type="text" placeholder="Text Name" v-model="name">
+          </div>
+
+          <div class="field">
+            <label class="label">Meta H1</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text Meta H1" v-model="meta_h1">
+            </div>
+
+            <div class="field">
+              <label class="label">Meta Title</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Text Meta Title"
+                       v-model="name">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Meta Description</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Text Meta Description"
+                       v-model="meta_description">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Body</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Body" v-model="body"></textarea>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Meta H1</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Text Meta H1">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Meta Title</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Text Meta Title">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Meta Description</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Text Meta Description">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Body</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Body"></textarea>
-          </div>
-        </div>
       </div>
       <div class="column">
 
@@ -69,27 +72,33 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 
 export default {
-  computed: {
-    ...mapGetters({
-      product: 'product/product',
-    }),
+  data() {
+    return {
+      name: '',
+      meta_h1: '',
+      meta_title: '',
+      meta_description: '',
+      body: ''
+    }
   },
   methods: {
     ...mapActions({
-      loadProduct: 'product/product'
+      loadProduct: 'product/product',
+      editing: 'product/editing',
     })
   },
-  mounted() {
-    console.log(this.$route.params.id)
-    this.loadProduct(this.$route.params.id)
+  async mounted() {
+    await this.loadProduct(this.$route.params.id)
+    for (const k in this._data) {
+      this[k] = this.$store.state.product.product[k]
+    }
   }
 }
 </script>
