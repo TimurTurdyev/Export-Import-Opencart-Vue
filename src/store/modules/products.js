@@ -1,6 +1,5 @@
-import products from '@/api/products'
+import axios from "axios";
 
-// initial state
 const state = () => ({
     products: [],
     count: 0,
@@ -26,13 +25,24 @@ const getters = {
 // actions
 const actions = {
     async products({commit}, payload) {
+        const root = this.state.settings
         console.log(payload)
-        const result = await products.get(payload ?? 1)
-        commit('products', result)
-        console.log(payload ?? 1)
+        let filter = '';
+        for (const key in payload) {
+            filter += `&filter[${key}]=${payload[key]}`
+        }
+        const response = async () => {
+            const response = await axios.get(`${root.base}index.php?route=beardedcode/product/list${root.token}${filter}`)
+            return response.data;
+        };
+
+        const result = await response()
+
+        commit('products', result.products)
+
         commit('pagination', {
-            page: Number(payload ?? 1),
-            total: Number(result.length)
+            page: Number(payload.page ?? 1),
+            total: Number(result.total)
         })
     },
     checks({commit}, payload) {

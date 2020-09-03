@@ -24,11 +24,11 @@
             {{ product.id }}
           </label>
         </td>
-        <td><img src="https://i.picsum.photos/id/83/200/200.jpg?hmac=PWpSDFTveI1bSJjmrf_vnw4ipqEELicSPpDf8jb89FI"
+        <td><img :src="product.image"
         class="image is-48x48"></td>
         <td>{{ product.title }}</td>
-        <td>00kn</td>
-        <td>500</td>
+        <td>{{product.sku}}</td>
+        <td>{{product.price}}</td>
         <td>
           <div class="buttons">
             <button class="button is-info">Info</button>
@@ -99,7 +99,10 @@ export default {
   },
   mounted() {
     this.checks = this.selectedChecks
-    this.loadProducts()
+    this.loadProducts({
+      start: 1,
+      limit: 30
+    })
   }
 }
 </script>

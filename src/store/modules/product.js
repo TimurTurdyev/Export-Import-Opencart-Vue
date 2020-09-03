@@ -1,4 +1,4 @@
-import product from '@/api/product'
+import axios from "axios";
 // initial state
 const state = () => ({
     product: {}
@@ -12,8 +12,9 @@ const getters = {
 // actions
 const actions = {
     async product({commit}, payload) {
-        console.log(payload)
-        const result = await product.get(payload)
+        const root = this.state.settings
+        const result = await axios.get(`${root.base}index.php?route=beardedcode/product/single${root.token}&id=${payload}`)
+            .then((resolve) => {resolve.data}).catch((reject) => console.log(reject));
         commit('product', result)
     },
 }
