@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+
 import products from './modules/products'
 import product from './modules/product'
 import settings from "./modules/settings";

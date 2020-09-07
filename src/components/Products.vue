@@ -25,14 +25,17 @@
           </label>
         </td>
         <td><img :src="product.image"
-        class="image is-48x48"></td>
+                 class="image is-48x48"></td>
         <td>{{ product.title }}</td>
-        <td>{{product.sku}}</td>
-        <td>{{product.price}}</td>
+        <td>{{ product.sku }}</td>
+        <td>{{ product.price }}</td>
         <td>
           <div class="buttons">
             <button class="button is-info">Info</button>
-            <router-link :to="'product/' +  product.id" class="button is-success">Edit
+            <router-link
+                :to="{ name: 'EditingProduct', params: { id: product.id }}"
+                class="button is-success">
+              Edit
             </router-link>
           </div>
         </td>
@@ -75,7 +78,11 @@ export default {
       updateChecks: 'products/checks',
     }),
     paginationOnChange(page) {
-      this.loadProducts(page)
+      this.$router.push({ path: `/page/${page}` })
+      this.loadProducts({
+        page: page,
+        limit: 30
+      })
       this.check = 0
     },
     checkAll(check) {
@@ -100,9 +107,15 @@ export default {
   mounted() {
     this.checks = this.selectedChecks
     this.loadProducts({
-      start: 1,
+      page: this.$route.params.id ?? 1,
       limit: 30
     })
+  },
+  beforeRouteUpdate (to, from, next) {
+    // обрабатываем изменение параметров маршрута...
+    // не забываем вызвать next()
+    console.log(to, from)
+    next()
   }
 }
 </script>

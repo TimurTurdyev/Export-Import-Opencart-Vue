@@ -5,6 +5,7 @@ import EditingProduct from "@/views/EditingProduct";
 import 'bulma/bulma.sass'
 
 Vue.use(VueRouter)
+
 const routes = [
     {
         path: '/',
@@ -12,9 +13,15 @@ const routes = [
         component: Export
     },
     {
+        path: '/page/:id',
+        name: 'Export',
+        component: Export,
+    },
+    {
         path: '/product/:id',
         name: 'EditingProduct',
-        component: EditingProduct
+        component: EditingProduct,
+        props: true
     },
     {
         path: '/about',

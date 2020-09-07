@@ -7,7 +7,7 @@ const state = () => ({
     checks: [],
     pagination: {
         current: 1,       // Current page
-        total: 100,       // Items total count
+        total: 0,       // Items total count
         itemsPerPage: 5   // Items per page
     }
 })
@@ -42,7 +42,8 @@ const actions = {
 
         commit('pagination', {
             page: Number(payload.page ?? 1),
-            total: Number(result.total)
+            total: Number(result.total),
+            itemsPerPage: payload.limit
         })
     },
     checks({commit}, payload) {
@@ -61,6 +62,7 @@ const mutations = {
     pagination(state, pagination) {
         state.pagination.current = pagination.page
         state.pagination.total = pagination.total
+        state.pagination.itemsPerPage = pagination.itemsPerPage
     },
     edit(state, product) {
         console.log(product)

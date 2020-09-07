@@ -1,32 +1,46 @@
 import axios from "axios";
+import {getField, updateField} from 'vuex-map-fields';
 // initial state
 const state = () => ({
-    product: {}
+    name: '',
+    meta_h1: '',
+    meta_title: '',
+    meta_description: '',
+    description: '',
+    model: '',
+    price: '',
+    cost: '',
+    quantity: '',
+    status: ''
 })
 
 // getters
 const getters = {
-    product: state => state.product,
+    getField
 }
 
 // actions
 const actions = {
-    async product({commit}, payload) {
+    async loadProduct({commit}, payload) {
         const root = this.state.settings
-        const result = await axios.get(`${root.base}index.php?route=beardedcode/product/single${root.token}&id=${payload}`)
-            .then((resolve) => {resolve.data}).catch((reject) => console.log(reject));
-        commit('product', result)
-    },
+        const response = async () => {
+            const response = await axios.get(`${root.base}index.php?route=beardedcode/product/single${root.token}&id=${payload}`)
+            return response.data;
+        };
+
+        const result = await response()
+        commit('setFields', result)
+    }
 }
 
 // mutations
 const mutations = {
-    product(state, product) {
-        state.product = product
+    setFields(state, product) {
+        for (const key in product) {
+            state[key] = product[key]
+        }
     },
-    editing(state, product) {
-        state.product = product
-    }
+    updateField
 }
 
 export default {

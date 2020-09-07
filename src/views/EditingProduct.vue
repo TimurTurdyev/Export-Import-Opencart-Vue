@@ -5,9 +5,15 @@
         <div class="column is-8">
           <h1 class="is-pulled-left">Редактирование товара</h1>
         </div>
-        <div class="column has-text-right">
-          <button type="button" class="button is-warning">Сохранить</button>
-          <button type="button" class="button" v-on:click.prevent="$router.back()">Вернуться</button>
+        <div class="column">
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <button type="button" class="button is-warning">Сохранить</button>
+            </p>
+            <p class="control">
+              <button type="button" class="button" v-on:click.prevent="$router.back()">Вернуться</button>
+            </p>
+          </div>
         </div>
       </div>
     </div>
