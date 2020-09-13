@@ -2,7 +2,7 @@
   <aside>
   <ul class="menu-list">
     <li><router-link to="/">Export</router-link></li>
-    <li><router-link to="/about">Import</router-link></li>
+    <li><router-link to="/import">Import</router-link></li>
   </ul>
   </aside>
 </template>

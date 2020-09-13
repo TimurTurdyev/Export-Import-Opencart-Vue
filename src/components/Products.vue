@@ -111,11 +111,5 @@ export default {
       limit: 30
     })
   },
-  beforeRouteUpdate (to, from, next) {
-    // обрабатываем изменение параметров маршрута...
-    // не забываем вызвать next()
-    console.log(to, from)
-    next()
-  }
 }
 </script>
