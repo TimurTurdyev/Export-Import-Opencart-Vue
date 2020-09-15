@@ -8,11 +8,13 @@
         <button type="button" class="button is-warning" v-on:click.prevent="submitFile()">Sent</button>
       </div>
     </div>
-    <div class="field">
-      <div class="file is-info has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" v-on:change="handleFileUpload()">
-          <span class="file-cta">
+    <div class="card">
+      <div class="card-content">
+        <div class="field">
+          <div class="file is-info has-name">
+            <label class="file-label">
+              <input class="file-input" type="file" v-on:change="handleFileUpload()">
+              <span class="file-cta">
             <span class="file-icon">
               <i class="fas fa-upload"></i>
             </span>
@@ -20,19 +22,22 @@
               File xlsx…
             </span>
           </span>
-          <span class="file-name" v-if="file_name">{{ file_name }}</span>
-          <span class="file-name" v-else>Файл не загружен</span>
-        </label>
+              <span class="file-name" v-if="file_name">{{ file_name }}</span>
+              <span class="file-name" v-else>Файл не загружен</span>
+            </label>
+          </div>
+        </div>
+        <Message
+            :message="message"
+            :isClass="isClass"
+        ></Message>
+        <Table
+            :tableHead="tableHead"
+            :tableBody="tableBody"
+        ></Table>
+        <Cooperate></Cooperate>
       </div>
     </div>
-    <Message
-        :message="message"
-        :isClass="isClass"
-    ></Message>
-    <Table
-        :tableHead="tableHead"
-        :tableBody="tableBody"
-    ></Table>
   </div>
 </template>
 
@@ -40,10 +45,11 @@
 import axios from "axios";
 import Message from "@/components/Message";
 import Table from "@/components/Table";
+import Cooperate from '@/components/Cooperate'
 
 export default {
   name: 'Import',
-  components: {Table, Message},
+  components: {Table, Message, Cooperate},
   data() {
     return {
       file: '',

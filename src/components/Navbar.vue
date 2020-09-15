@@ -1,10 +1,24 @@
 <template>
-  <aside>
-  <ul class="menu-list">
-    <li><router-link to="/">Export</router-link></li>
-    <li><router-link to="/import">Import</router-link></li>
-  </ul>
-  </aside>
+  <nav class="navbar is-white">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item brand-text" href="#">
+          Bulma Admin
+        </a>
+        <div class="navbar-burger burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <router-link to="/" class="navbar-item">Export</router-link>
+          <router-link to="/import" class="navbar-item">Export</router-link>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -15,3 +29,9 @@ export default {
   }
 }
 </script>
+<style>
+nav.navbar {
+  border-top: 4px solid #276cda;
+  margin-bottom: 1rem;
+}
+</style>

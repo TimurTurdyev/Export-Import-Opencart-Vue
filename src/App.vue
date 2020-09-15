@@ -1,23 +1,9 @@
 <template>
-  <div id="app">
-    <div class="sidebar-bg"></div>
+  <div id="app" class="min_height">
+    <navbar/>
     <div class="container">
-      <div class="columns min_height">
-        <div class="column is-one-fifth has-background-light">
-          <br>
-          <navbar/>
-        </div>
-        <div class="column has-background-white">
-          <br>
-          <router-view/>
-          <hr>
-          <p class="has-text-centered has-text-grey-light">
-            Created by <strong class="has-text-grey">Timur.T.R</strong>.
-            <br>
-            Version <strong class="has-text-grey">1.0.0</strong>
-          </p>
-        </div>
-      </div>
+      <br>
+      <router-view/>
     </div>
   </div>
 </template>
@@ -34,16 +20,13 @@ export default {
 <style>
 #app {
   position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+  background: #ECF0F3;
 }
 .min_height {
   min-height: 100vh;
-}
-.sidebar-bg {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 0;
-  top: 0;
-  background: #f5f5f5;
 }
 </style>

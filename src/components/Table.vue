@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="table-container">
     <table class="table is-hoverable" style="width: 100%;">
       <thead>
       <tr>
         <th v-for="(key, index) in tableHead" :key="index">
-          [{{index}}] - {{key}}
+          [{{index}}]{{key.charAt(0).toUpperCase() + key.slice(1)}}
         </th>
       </tr>
       </thead>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f5e77f05-7f29-4ef0-9ba7-358db491d6aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.pullapprove.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Addition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AddressHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdvancedValueBinder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alignment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Archive.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AutoFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autoloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Axis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BIFF5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BIFF8.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BIFFwriter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BSE.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaseDrawing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaseParserClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaseReader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaseWriter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bigint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BigintTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Border.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Borders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BstoreContainer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BugHonorFileTimeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Builder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BuiltIn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHANGELOG.TXT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CacheException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CacheInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calculation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cell.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CellIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cells.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CellsFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChainedBlockStream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CholeskyDecomposition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClassLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientExceptionInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodePage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Column.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ColumnAndRowAttributes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ColumnCellIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ColumnDimension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ColumnIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Complex.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Conditional.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConditionalStyles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ContentTypes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coordinate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Csv.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CyclicReferenceStack.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataSeries.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataSeriesValues.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataValidation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataValidations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DateTime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DefaultReadFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DefaultValueBinder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DeflateStream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DgContainer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DggContainer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dimension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DirectSum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Division.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DocProps.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DocumentGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dompdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Drawing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EigenvalueDecomposition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EncodingException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engineering.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ErrorCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Escher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExceptionHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExponentialBestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileNotReadableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fill.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FillPattern.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Financial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Font.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FormulaParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FormulaToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gnumeric.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GridLines.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HashTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeaderFooter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeaderFooterDrawing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hyperlink.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hyperlinks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IComparable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IReadFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IReader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITextElement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IValueBinder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IWriter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IncompatibleOptionsException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvalidArgumentException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JpGraph.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LUDecomposition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Layout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Legend.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinearBestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogarithmicBestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logical.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LookupRef.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MD5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathTrig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maths.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Matrix.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mbstring.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Memory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MemoryDrawing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MessageInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Meta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MetaInf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Method.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mimetype.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Multiplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NamedRange.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NetworkExceptionInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NumberFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLE.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLERead.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Operator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OverflowException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP Charting Libraries.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PPS.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PageMargins.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PageSetup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordHasher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlotArea.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PolynomialBestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PowerBestFit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Properties.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Protection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QRDecomposition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RC4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReferenceHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RelsRibbon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RelsVBA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RequestExceptionInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RequestFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RequestInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResponseFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResponseInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RichText.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Root.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Row.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RowCellIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RowDimension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RowIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Run.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sample.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServerRequestFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServerRequestInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shadow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SheetView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SheetViewOptions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SheetViews.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SingularValueDecomposition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Slk.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpContainer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpgrContainer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spreadsheet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stack.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Statistical.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StreamFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StreamInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StreamNotReadableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StringHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StringTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StringValueBinder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Style.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Styles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Subtraction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Supervisor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tcpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextElement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Theme.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thumbnails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TimeZone.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Title.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trend.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFileFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFileInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UriFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UriInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Version.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workbook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Worksheet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WriterPart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/XMLWriter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Xf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Xlfn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Xls.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Xlsx.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Xml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/XmlScanner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZipStream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZipStreamTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/abs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acosh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acoth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acsc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acsch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adjoint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/antidiagonal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/argument.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asech.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asinh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atanh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_classmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_files.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_namespaces.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_psr4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_real.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autoload_static.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beardedcode_three_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beardedcode_three_page.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildPhar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cofactors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/complexTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conjugate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/determinant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diagonal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/directsum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/divideby.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/divideinto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/form_create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functionlist.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/import.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infection.json.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inverse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ln.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log10.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lowerCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiply.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/negative.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpstan.neon" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/psalm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rho.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sech.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sinh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sqrt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cooperate.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subtract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tanh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testFunctions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testOperations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/three_page.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/three_page_form.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/titleCaseRegexp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transpose.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upperCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/widget.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createConfigJson.js" beforeDir="false" afterPath="$PROJECT_DIR$/createConfigJson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/EditingProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/EditingProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Import.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Import.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fVC95ZkxIFSehx5lQYDsxROd1o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.serve">
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5e77f05-7f29-4ef0-9ba7-358db491d6aa" name="Default Changelist" comment="" />
+      <created>1596293719083</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596293719083</updated>
+      <workItem from="1596293720347" duration="6727000" />
+      <workItem from="1596379751009" duration="1321000" />
+      <workItem from="1596381238165" duration="14128000" />
+      <workItem from="1596571034111" duration="32000" />
+      <workItem from="1596571085748" duration="1952000" />
+      <workItem from="1596656268553" duration="43000" />
+      <workItem from="1596995269140" duration="11884000" />
+      <workItem from="1597091060531" duration="620000" />
+      <workItem from="1597177213101" duration="10000" />
+      <workItem from="1597265214227" duration="7522000" />
+      <workItem from="1597303887939" duration="21000" />
+      <workItem from="1597775245392" duration="11481000" />
+      <workItem from="1597954961330" duration="21000" />
+      <workItem from="1598126215704" duration="1986000" />
+      <workItem from="1598181151160" duration="2931000" />
+      <workItem from="1598210327975" duration="24837000" />
+      <workItem from="1598471834386" duration="3173000" />
+      <workItem from="1598475020735" duration="4195000" />
+      <workItem from="1598557195015" duration="7222000" />
+      <workItem from="1598811889069" duration="27000" />
+      <workItem from="1598985803681" duration="9555000" />
+      <workItem from="1599259222821" duration="62000" />
+      <workItem from="1599407475186" duration="21613000" />
+      <workItem from="1599507958834" duration="9279000" />
+      <workItem from="1599595798140" duration="6299000" />
+      <workItem from="1599854397673" duration="5502000" />
+      <workItem from="1600005084387" duration="18299000" />
+      <workItem from="1600201889178" duration="4445000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="686" y="352" width="616" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598474371970">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="686" y="352" width="616" height="416" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1598474371970" />
+    <state x="782" y="257" width="424" height="496" key="FileChooserDialogImpl" timestamp="1600010867500">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="782" y="257" width="424" height="496" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1600010867500" />
+    <state width="1802" height="311" key="GridCell.Tab.0.bottom" timestamp="1600033005076">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="311" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1600033005076" />
+    <state width="1802" height="311" key="GridCell.Tab.0.center" timestamp="1600033005076">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="311" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1600033005076" />
+    <state width="1802" height="311" key="GridCell.Tab.0.left" timestamp="1600033005076">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="311" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1600033005076" />
+    <state width="1802" height="311" key="GridCell.Tab.0.right" timestamp="1600033005076">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="311" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1600033005076" />
+    <state x="488" y="189" width="1016" height="742" key="SettingsEditor" timestamp="1597270983521">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="488" y="189" width="1016" height="742" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1597270983521" />
+    <state x="802" y="179" width="383" height="761" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598558167648">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="802" y="179" width="383" height="761" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1598558167648" />
+    <state x="686" y="274" width="619" height="554" key="find.popup" timestamp="1596380746480">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="686" y="274" width="619" height="554" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1596380746480" />
+    <state x="660" y="249" key="run.anything.popup" timestamp="1598995802410">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="660" y="249" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1598995802410" />
+    <state x="659" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1599424807355">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="659" y="255" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1599424807355" />
+  </component>
+</project>

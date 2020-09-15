@@ -1,64 +1,68 @@
 <template>
-  <div>
-    <table class="table is-hoverable" style="width: 100%;">
-      <thead>
-      <tr>
-        <th>
-          <label class="checkbox">
-            <input type="checkbox" v-model="check" v-on:change="checkAll(check)" :value="1">
-            Id
-          </label>
-        </th>
-        <th>Image</th>
-        <th>Title</th>
-        <th>Sku</th>
-        <th>Price</th>
-        <th>Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="product in products" :key="product.id">
-        <td>
-          <label class="checkbox">
-            <input type="checkbox" v-model="checks" v-on:change="updateChecks(checks)" :value="product.id">
-            {{ product.id }}
-          </label>
-        </td>
-        <td><img :src="product.image"
-                 class="image is-48x48"></td>
-        <td>{{ product.title }}</td>
-        <td>{{ product.sku }}</td>
-        <td>{{ product.price }}</td>
-        <td>
-          <div class="buttons">
-            <button class="button is-info">Info</button>
-            <router-link
-                :to="{ name: 'EditingProduct', params: { id: product.id }}"
-                class="button is-success">
-              Edit
-            </router-link>
-          </div>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="card">
+    <div class="card-content">
+      <table class="table is-hoverable" style="width: 100%;">
+        <thead>
+        <tr>
+          <th>
+            <label class="checkbox">
+              <input type="checkbox" v-model="check" v-on:change="checkAll(check)" :value="1">
+              Id
+            </label>
+          </th>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Sku</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="product in products" :key="product.id">
+          <td>
+            <label class="checkbox">
+              <input type="checkbox" v-model="checks" v-on:change="updateChecks(checks)" :value="product.id">
+              {{ product.id }}
+            </label>
+          </td>
+          <td><img :src="product.image"
+                   class="image is-48x48"></td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.sku }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <div class="buttons">
+              <button class="button is-info">Info</button>
+              <router-link
+                  :to="{ name: 'EditingProduct', params: { id: product.id }}"
+                  class="button is-success">
+                Edit
+              </router-link>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
 
-    <pagination
-        :current="pagination.current"
-        :total="pagination.total"
-        :itemsPerPage="pagination.itemsPerPage"
-        :onChange="paginationOnChange"
-        :step="1">
-    </pagination>
+      <pagination
+          :current="pagination.current"
+          :total="pagination.total"
+          :itemsPerPage="pagination.itemsPerPage"
+          :onChange="paginationOnChange"
+          :step="1">
+      </pagination>
+      <Cooperate></Cooperate>
+    </div>
   </div>
 </template>
 
 <script>
 import Pagination from 'vue-2-bulma-pagination'
+import Cooperate from './Cooperate'
 import {mapActions, mapGetters} from 'vuex'
 
 export default {
-  components: {Pagination},
+  components: {Pagination, Cooperate},
   data() {
     return {
       checks: [],
