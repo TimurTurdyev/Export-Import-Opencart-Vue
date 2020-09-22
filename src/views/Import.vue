@@ -4,7 +4,8 @@
       <div class="column is-8">
         <h1 class="is-pulled-left">Импорт товаров</h1>
       </div>
-      <div class="column has-text-right">
+      <div class="column buttons has-text-right">
+        <button type="button" class="button is-success" :disabled="!load" v-on:click.prevent="loadData">Load</button>
         <button type="button" class="button is-warning" v-on:click.prevent="submitFile()">Sent</button>
       </div>
     </div>
@@ -34,6 +35,7 @@
         <Table
             :tableHead="tableHead"
             :tableBody="tableBody"
+            :onChange="onChange"
         ></Table>
         <Cooperate></Cooperate>
       </div>
@@ -54,6 +56,7 @@ export default {
     return {
       file: '',
       file_name: '',
+      load: false,
       message: '',
       isClass: '',
       tableHead: [],
@@ -61,6 +64,34 @@ export default {
     }
   },
   methods: {
+    onChange(index, key, value) {
+      // console.log(index, key, value)
+      this.tableBody[index][key] = value;
+    },
+    loadData() {
+      const root = this.$store.state.settings
+      const data = []
+      for(let i = 2; i < 50; i++) {
+        const value = {}
+        const row = this.tableBody[i];
+        if (!row) break;
+        for (const key in row) {
+          value[this.tableHead[key]] = row[key];
+        }
+
+        data.push(value)
+      }
+      axios.post(`${root.base}index.php?route=beardedcode/import/load${root.token}`,
+          {
+            productsData: data
+          }
+      ).then((response) => {
+        console.log(response)
+
+      }).catch(function () {
+        console.log('FAILURE!!');
+      });
+    },
     submitFile() {
       const root = this.$store.state.settings
       let formData = new FormData();
@@ -83,10 +114,11 @@ export default {
             return responseCode.data;
           };
 
-          getData().then((resolve, reject) => {
-            console.log(resolve, reject)
+          getData().then((resolve) => {
+            console.log(resolve)
             this.tableHead = resolve['head']
             this.tableBody = resolve['data']
+            this.load = true
           })
         }
       }).catch(function () {

@@ -1,9 +1,10 @@
 <template>
   <div id="app" class="min_height">
     <navbar/>
-    <div class="container">
+    <div class="container is-fluid">
       <br>
       <router-view/>
+      <br>
     </div>
   </div>
 </template>

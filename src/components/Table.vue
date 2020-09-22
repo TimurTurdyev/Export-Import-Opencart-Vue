@@ -11,7 +11,13 @@
       <tbody>
       <tr v-for="(row, index) in tableBody" :key="index">
         <td v-for="(value, key) in row" :key="key">
-          {{value}}
+          <div class="field">
+            <div class="control is-small">
+              <textarea class="textarea is-small"
+                        v-on:input="change(index, key)"
+                        v-text="value"></textarea>
+            </div>
+          </div>
         </td>
       </tr>
       </tbody>
@@ -24,7 +30,17 @@ export default {
   name: 'Table',
   props: {
     tableHead: Object,
-    tableBody: Object
+    tableBody: Object,
+    onChange: Function
+  },
+  methods: {
+    change(index, key) {
+      this.onChange(index, key, event.target.value)
+    },
+    checkSeparator(word) {
+      console.log(word)
+      return true
+    }
   },
   mounted() {
     console.log(1111)
