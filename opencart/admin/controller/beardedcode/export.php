@@ -22,6 +22,7 @@ class ControllerBeardedcodeExport extends Controller
             && ($request = json_decode(file_get_contents('php://input'), 1))) {
             if (is_array($request) && $results = $this->model_beardedcode_export->search($request)) {
                 $file_generate = $this->excel($results);
+                $json['test'] = $results;
                 if ($file_generate) {
                     $json['download_file_path'] = $this->download_file_path;
                 }
@@ -56,6 +57,7 @@ class ControllerBeardedcodeExport extends Controller
                     $ColumnIndex = $sheet->getCellByColumnAndRow($i += 1, $row)->getCoordinate();
                     $sheet->setCellValue($ColumnIndex, $value ?? '');
                 }
+                $row += 1;
             }
 
             $writer = new Xlsx($spreadsheet);

@@ -1,10 +1,12 @@
 <?php
 
 require DIR_SYSTEM . 'library/beardedcode/vendor/autoload.php';
+
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class ControllerBeardedcodeImport extends Controller
 {
+    private $errors = [];
     public function index()
     {
         $json = array();
@@ -108,5 +110,70 @@ class ControllerBeardedcodeImport extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($json));
+    }
+
+    public function load()
+    {
+        $json = array();
+
+        if (($this->request->server['REQUEST_METHOD'] === 'POST')
+            && $this->user->hasPermission('modify', 'beardedcode/import')
+            && isset($this->request->server['CONTENT_TYPE'])
+            && (strripos($this->request->server['CONTENT_TYPE'], 'application/json;') !== false)
+            && ($request = json_decode(file_get_contents('php://input'), 1))) {
+            if (is_array($request)) {
+                if ($this->update($request['productsData'])) {
+                    $json['success'] = 'Success! Products to updated';
+                } else {
+                    $json['data'] = $this->errors;
+                    $json['error'] = 'This load data to fail';
+                }
+            }
+        }
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+    }
+// SELECT `COLUMN_NAME`, `COLUMN_TYPE`  FROM `INFORMATION_SCHEMA`.`COLUMNS`  WHERE `TABLE_SCHEMA`='lpack_new' AND `TABLE_NAME` = 'oc_product';
+    private function update($productData)
+    {
+        if (!empty($productData['id'])) {
+            return false;
+        }
+
+        $this->load->model('beardedcode/update');
+
+        foreach ($productData as $key => $data) {
+
+            $sqlData = [
+                'product' => [],
+                'product_description' => [],
+                'product_to_category' => '',
+                'product_option_value' => '',
+                'product_discount' => '',
+            ];
+
+            $product_id = 0;
+
+            foreach ($data as $name => $value) {
+                if ($name === 'product_id') {
+                    $product_id = $value;
+                    continue;
+                }
+                if (isset($sqlData[$name])) {
+                    $sqlData[$name] = $value;
+                } elseif($name === 'name') {
+                    $sqlData['product_description'][$name] = $value;
+                } else {
+                    $sqlData['product'][$name] = $value;
+                }
+            }
+            foreach ($sqlData as $metod => $data) {
+                if(!$this->model_beardedcode_update->{$metod}($product_id, $data)) {
+                    $this->errors[$product_id] = $data;
+                }
+            }
+        }
+        return !$this->errors;
     }
 }
