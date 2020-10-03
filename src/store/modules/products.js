@@ -5,6 +5,9 @@ const state = () => ({
     count: 0,
     edit: {},
     checks: [],
+    checkNames: [],
+    checkCategories: [],
+    checkStatus: '',
     pagination: {
         current: 1,       // Current page
         total: 0,       // Items total count
@@ -18,19 +21,37 @@ const getters = {
     count: state => state.count,
     edit: state => state.edit,
     pagination: state => state.pagination,
-    checks: state => state.checks
+    checks: state => state.checks,
+    checkNames: state => state.checkNames,
+    checkCategories: state => state.checkCategories,
+    checkStatus: state => state.checkStatus,
 }
-
 
 // actions
 const actions = {
-    async products({commit}, payload) {
+    async products({commit, state}, payload) {
         const root = this.state.settings
-        console.log(payload)
+
         let filter = '';
+
         for (const key in payload) {
             filter += `&filter[${key}]=${payload[key]}`
         }
+
+        if (state.checkNames) {
+            state.checkNames.forEach((name) => {
+                filter += `&filter[names][]=${decodeURIComponent(name)}`
+            })
+        }
+
+        if (state.checkCategories) {
+            state.checkCategories.forEach((category_id) => {
+                filter += `&filter[categories][]=${category_id}`
+            })
+        }
+
+        filter += `&filter[status]=${state.checkStatus}`
+
         const response = async () => {
             const response = await axios.get(`${root.base}index.php?route=beardedcode/product/list${root.token}${filter}`)
             return response.data;
@@ -48,6 +69,15 @@ const actions = {
     },
     checks({commit}, payload) {
         commit('updateChecks', payload)
+    },
+    checksNames({commit}, payload) {
+        commit('updateCheckNames', payload)
+    },
+    checksCategories({commit}, payload) {
+        commit('updateCheckCategories', payload)
+    },
+    checksStatus({commit}, payload) {
+        commit('updateStatus', payload)
     },
     edit({commit}, payload) {
         console.log(commit, payload)
@@ -70,6 +100,15 @@ const mutations = {
     },
     updateChecks(state, checks) {
         state.checks = checks
+    },
+    updateCheckNames(state, checks) {
+        state.checkNames = checks
+    },
+    updateCheckCategories(state, checks) {
+        state.checkCategories = checks
+    },
+    updateStatus(state, checks) {
+        state.checkStatus = checks
     }
 }
 

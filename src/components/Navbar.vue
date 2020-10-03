@@ -14,7 +14,7 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <router-link to="/" class="navbar-item">Export</router-link>
-          <router-link to="/import" class="navbar-item">Export</router-link>
+          <router-link to="/import" class="navbar-item">Import</router-link>
         </div>
       </div>
     </div>

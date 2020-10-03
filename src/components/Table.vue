@@ -33,17 +33,20 @@ export default {
     tableBody: Object,
     onChange: Function
   },
+  data() {
+    return {
+      tableBodyData: [],
+      pagination: {
+        current: 1,
+        total: 0,
+        itemsPerPage: 5,
+      }
+    }
+  },
   methods: {
     change(index, key) {
       this.onChange(index, key, event.target.value)
-    },
-    checkSeparator(word) {
-      console.log(word)
-      return true
     }
-  },
-  mounted() {
-    console.log(1111)
-  },
+  }
 }
 </script>

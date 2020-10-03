@@ -1,11 +1,11 @@
 let location_base = ''
 let token = ''
-if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV !== 'production') {
     location_base = '//www.lpack-spb.ru/admin/'
-    token = '&token=r3hxrJeZdwyuROyZSESuVA5V9IFdQ3Rc'
+    token = '&token=AMijT9y6xC1t4CqajIHD2ihqvHc4EUfa'
 } else {
-    location_base = location.origin + location.pathname + '?route=beardedcode/export'
-    token = location.href.replace(/.+(&token=.+)?&.{0,}/gi, '$1')
+    location_base = location.origin + '/admin/'
+    token = location.href.replace(/.{0,}(&token=.*)/gi, '$1').replace(/#.+/gi, '')
 }
 
 // initial state

@@ -3,6 +3,7 @@ import Vue from 'vue'
 
 import products from './modules/products'
 import product from './modules/product'
+import dataInfo from './modules/dataInfo'
 import settings from "./modules/settings";
 
 Vue.use(Vuex)
@@ -13,6 +14,7 @@ export default new Vuex.Store({
     modules: {
         products,
         product,
+        dataInfo,
         settings
     },
     strict: debug,

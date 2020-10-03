@@ -2,16 +2,23 @@ import axios from "axios";
 import {getField, updateField} from 'vuex-map-fields';
 // initial state
 const state = () => ({
-    name: '',
-    meta_h1: '',
-    meta_title: '',
-    meta_description: '',
-    description: '',
-    model: '',
-    price: '',
-    cost: '',
-    quantity: '',
-    status: ''
+    product: {
+        model: '',
+        price: '',
+        cost: '',
+        quantity: '',
+        status: ''
+    },
+    product_description: {
+        name: '',
+        meta_h1: '',
+        meta_title: '',
+        meta_description: '',
+        description: '',
+    },
+    product_to_category: [],
+    product_option_value: [],
+    product_discount: [],
 })
 
 // getters
@@ -30,6 +37,26 @@ const actions = {
 
         const result = await response()
         commit('setFields', result)
+    },
+    async update({state}) {
+
+        const root = this.state.settings
+        const product = state
+        const message = {
+            info: '',
+            isClass: ''
+        }
+        const result = await axios.post(`${root.base}index.php?route=beardedcode/product/update${root.token}`, product)
+            .then((response) => {
+                return response.data
+                // FileDownload(response.data, 'report.csv');
+            })
+            .catch((reject) => {
+                console.log(reject)
+            })
+        message['info'] = result['success']
+        message['isClass'] = 'success'
+        return message
     }
 }
 

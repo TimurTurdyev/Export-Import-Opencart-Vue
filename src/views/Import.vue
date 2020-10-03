@@ -65,7 +65,6 @@ export default {
   },
   methods: {
     onChange(index, key, value) {
-      // console.log(index, key, value)
       this.tableBody[index][key] = value;
     },
     loadData() {
@@ -86,7 +85,10 @@ export default {
             productsData: data
           }
       ).then((response) => {
-        console.log(response)
+        for (const key in response.data) {
+          this.isClass = key;
+          this.message = response.data[key]
+        }
 
       }).catch(function () {
         console.log('FAILURE!!');
@@ -115,7 +117,6 @@ export default {
           };
 
           getData().then((resolve) => {
-            console.log(resolve)
             this.tableHead = resolve['head']
             this.tableBody = resolve['data']
             this.load = true
@@ -126,7 +127,6 @@ export default {
       });
     },
     handleFileUpload() {
-      console.log(event)
       this.file = event.target.files[0]
       this.file_name = event.target.files[0].name
     }

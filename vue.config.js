@@ -1,5 +1,8 @@
 module.exports = {
-    // outputDir: '/var/www/lpack-spb.ru/admin/view/javascript/bearded_export_import/',
+    outputDir: '/var/www/lpack-spb.ru/admin/view/javascript/bearded_export_import/',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/admin/view/javascript/bearded_export_import/'
+        : '/'
     // configureWebpack: config => {
     //     if (process.env.NODE_ENV === 'production') {
     //         console.log(config)
