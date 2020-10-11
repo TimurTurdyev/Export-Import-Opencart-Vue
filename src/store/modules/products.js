@@ -1,4 +1,5 @@
 import axios from "axios";
+import {getField, updateField} from 'vuex-map-fields';
 
 const state = () => ({
     products: [],
@@ -6,6 +7,9 @@ const state = () => ({
     edit: {},
     checks: [],
     checkNames: [],
+    checkMinPercent: 0,
+    checkMaxPercent: 100,
+    addFilterPercent: false,
     checkCategories: [],
     checkStatus: '',
     pagination: {
@@ -25,6 +29,7 @@ const getters = {
     checkNames: state => state.checkNames,
     checkCategories: state => state.checkCategories,
     checkStatus: state => state.checkStatus,
+    getField
 }
 
 // actions
@@ -48,6 +53,11 @@ const actions = {
             state.checkCategories.forEach((category_id) => {
                 filter += `&filter[categories][]=${category_id}`
             })
+        }
+
+        if (state.addFilterPercent) {
+            filter += `&filter[percent][min]=${state.checkMinPercent}`
+            filter += `&filter[percent][max]=${state.checkMaxPercent}`
         }
 
         filter += `&filter[status]=${state.checkStatus}`
@@ -79,9 +89,6 @@ const actions = {
     checksStatus({commit}, payload) {
         commit('updateStatus', payload)
     },
-    edit({commit}, payload) {
-        console.log(commit, payload)
-    }
 }
 
 // mutations
@@ -94,9 +101,15 @@ const mutations = {
         state.pagination.total = pagination.total
         state.pagination.itemsPerPage = pagination.itemsPerPage
     },
-    edit(state, product) {
-        console.log(product)
-        state.details[product.id] = product
+    changeOptionValue(state, targetOdj) {
+        if (targetOdj.name == 'cost') {
+            let cost = parseFloat(targetOdj.value)
+            let percent = parseFloat(state.products[targetOdj.id].cost_percentage)
+            let price = cost + (cost / 100 * percent)
+            state.products[targetOdj.id]['options'][targetOdj.option]['values'][targetOdj.optionVal]['price'] = (price || 0).toFixed(4)
+        }
+
+        state.products[targetOdj.id]['options'][targetOdj.option]['values'][targetOdj.optionVal][targetOdj.name] = targetOdj.value
     },
     updateChecks(state, checks) {
         state.checks = checks
@@ -109,7 +122,8 @@ const mutations = {
     },
     updateStatus(state, checks) {
         state.checkStatus = checks
-    }
+    },
+    updateField
 }
 
 export default {

@@ -27,7 +27,7 @@ class ModelBeardedCodeExport extends Model
                    ) as product_to_category,";
         $sql .= " (SELECT 
                         GROUP_CONCAT(
-                        100 - d.price / (p.price / 100)
+                        d.quantity, '>' , 100 - d.price / (p.price / 100)
                         ORDER BY 
                             d.quantity ASC SEPARATOR '\r\n')
                     FROM `" . DB_PREFIX . "product_discount` d

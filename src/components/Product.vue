@@ -62,7 +62,16 @@
                 <label class="label">Cost</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="Product Cost"
-                         v-model="cost">
+                         v-on:input="changePrice" v-model="cost">
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Percent</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Product Cost Percent"
+                         v-on:input="changePrice" v-model="cost_percentage">
                 </div>
               </div>
             </div>
@@ -110,11 +119,11 @@
               <tbody>
               <tr v-for="(category) in categories" :key="category.category_id">
                 <td>
-                    <label class="checkbox">
-                      <input type="checkbox"
-                             v-model="product_to_category"
-                             :value="category.category_id">
-                    </label>
+                  <label class="checkbox">
+                    <input type="checkbox"
+                           v-model="product_to_category"
+                           :value="category.category_id">
+                  </label>
                 </td>
                 <td>
                   <label class="radio">
@@ -165,6 +174,7 @@ export default {
       'product.sku',
       'product.price',
       'product.cost',
+      'product.cost_percentage',
       'product.quantity',
       'product.status',
       'product_to_category',
@@ -179,6 +189,12 @@ export default {
       loadProduct: 'product/loadProduct',
       loadCategories: 'dataInfo/loadCategories',
     }),
+    changePrice() {
+      let cost = parseFloat(this.cost)
+      let percent = parseFloat(this.cost_percentage)
+      let price = cost + (cost / 100 * percent)
+      this.price = (price || 0).toFixed(4)
+    },
     changeMainCategory(category_id) {
       let product_to_category = [category_id];
       this.product_to_category.forEach((item) => {

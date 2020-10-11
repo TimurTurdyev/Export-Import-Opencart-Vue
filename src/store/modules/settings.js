@@ -2,7 +2,7 @@ let location_base = ''
 let token = ''
 if (process.env.NODE_ENV !== 'production') {
     location_base = '//www.lpack-spb.ru/admin/'
-    token = '&token=AMijT9y6xC1t4CqajIHD2ihqvHc4EUfa'
+    token = '&token=LZTfNBB0UmSIy0TxA6g76xTknI1WGZeq'
 } else {
     location_base = location.origin + '/admin/'
     token = location.href.replace(/.{0,}(&token=.*)/gi, '$1').replace(/#.+/gi, '')

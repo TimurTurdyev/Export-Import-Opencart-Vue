@@ -4,9 +4,10 @@ import {getField, updateField} from 'vuex-map-fields';
 const state = () => ({
     product: {
         model: '',
-        price: '',
-        cost: '',
-        quantity: '',
+        price: 0.00,
+        cost: 0.00,
+        cost_percentage: 0.00,
+        quantity: 0,
         status: ''
     },
     product_description: {

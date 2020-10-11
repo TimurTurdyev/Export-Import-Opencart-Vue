@@ -31,6 +31,30 @@
             </select>
           </div>
           <hr>
+          <div :class="{'is-hidden': !addFilterPercent}">
+            <label>Процент Больше или равно:
+              <span class="tag">{{ checkMinPercent }}</span></label>
+            <input class="slider has-output"
+                   v-model="checkMinPercent"
+                   min="0"
+                   max="100"
+                   value="0"
+                   step="1"
+                   type="range" style="width: 100%;">
+            <br>
+            <label>Процент меньше или равно:
+              <span class="tag">{{ checkMaxPercent }}</span></label>
+            <input class="slider has-output"
+                   v-model="checkMaxPercent"
+                   min="0"
+                   max="100"
+                   value="100"
+                   step="1"
+                   type="range" style="width: 100%;">
+          </div>
+          <span class="is-small">Учитывать колонку процент <input type="checkbox" v-model="addFilterPercent"></span>
+
+          <hr>
           <span class="is-small">Filter to status</span>
           <div class="control">
             <label class="radio">
@@ -57,10 +81,10 @@
     <div class="column">
       <div class="card">
         <div class="card-content">
-          <table class="table is-hoverable" style="width: 100%;">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="width: 100%;">
             <thead>
             <tr>
-              <th>
+              <th width="80">
                 <label class="checkbox">
                   <input type="checkbox" v-model="check" v-on:change="checkAll(check)" :value="1">
                   Id
@@ -68,38 +92,143 @@
               </th>
               <th>Image</th>
               <th>Title</th>
-              <th>Sku</th>
-              <th>Price</th>
+              <th width="140">Sku</th>
+              <th width="120">Price</th>
+              <th width="120">Cost</th>
+              <th width="120">Percent</th>
               <th>Status</th>
               <th class="has-text-right">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(product) in products" :key="product.id">
-              <td>
-                <label class="checkbox">
-                  <input type="checkbox" v-model="checks" v-on:change="updateChecks(checks)" :value="product.id">
-                  {{ product.id }}
-                </label>
-              </td>
-              <td><img :src="product.image"
-                       class="image is-48x48"></td>
-              <td>{{ product.title }}</td>
-              <td>{{ product.sku }}</td>
-              <td>{{ product.price }}</td>
-              <td>
-                <span class="tag is-success" v-if="product.status == 1">ON</span>
-                <span class="tag is-danger" v-else>OFF</span>
-              </td>
-              <td>
-                <div class="field is-grouped is-grouped-right">
-                  <p class="control">
-                    <a :href="generateProductLink(product.id)" target="_blank" class="button is-info">Open</a>
-                  </p>
-                  <router-link :to="'/product/' + product.id" class="button is-warning">Info</router-link>
-                </div>
-              </td>
-            </tr>
+            <template v-for="(product, index) in products">
+              <tr :key="index">
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" v-model="checks" v-on:change="updateChecks(checks)" :value="product.id">
+                    {{ product.id }}
+                  </label>
+                </td>
+                <td>
+                  <img :src="product.image" class="image is-48x48">
+                </td>
+                <td>{{ product.title }}</td>
+                <td>
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Product Sku"
+                             v-model="product.sku">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Product Cost Percent"
+                             v-model="product.price">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Product Cost Percent"
+                             v-on:input="changePrice(index)" v-model="product.cost">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Product Cost Percent"
+                             v-on:input="changePrice(index)" v-model="product.cost_percentage">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" v-on:change="changeProductStatus(product)" :checked="product.status == '1'">
+                    <span class="slider_checkbox"></span>
+                  </label>
+                </td>
+                <td>
+                  <div class="field is-grouped is-grouped-right">
+                    <p class="control">
+                      <a :href="generateProductLink(product.id)" target="_blank" class="button is-info">
+                        <font-awesome-icon icon="link"/>
+                      </a>
+                    </p>
+                    <router-link :to="'/product/' + product.id" class="button is-warning">
+                      <font-awesome-icon
+                          icon="pen-square"/>
+                    </router-link>
+                  </div>
+                </td>
+              </tr>
+              <tr :key="index + '_' + product.id" v-if="product.options.length" class="tr_details">
+                <td colspan="3"></td>
+                <td colspan="6">
+                  <div class="options" v-if="product.options.length">
+                    <div class="options-block" v-for="(option, gi) in product.options" :key="gi">
+                      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                        <thead>
+                        <tr>
+                          <th width="40"><small>Id</small></th>
+                          <th><small>{{ option.name }}</small></th>
+                          <th width="60"><small>Prefix</small></th>
+                          <th width="80"><small>Price</small></th>
+                          <th width="80"><small>Cost</small></th>
+                          <th width="80"><small>Quantity</small></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(values, vi) in option.values" :key="vi">
+                          <td><small>{{ values.product_option_value_id }}</small></td>
+                          <td><small>{{ values.name }}</small></td>
+                          <td>
+                            <div class="field">
+                              <div class="control">
+                                <input type="text" class="input is-small"
+                                       v-on:input="changeOption('price_prefix', product.id, gi, vi)"
+                                       :value="values.price_prefix">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="field">
+                              <div class="control">
+                                <input type="text" class="input is-small"
+                                       v-on:input="changeOption('price', product.id, gi, vi)"
+                                       :value="values.price">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="field">
+                              <div class="control">
+                                <input type="text" class="input is-small"
+                                       v-on:input="changeOption('cost', product.id, gi, vi)"
+                                       :value="values.cost">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="field">
+                              <div class="control">
+                                <input type="text" class="input is-small"
+                                       v-on:input="changeOption('quantity', product.id, gi, vi)"
+                                       :value="values.quantity">
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </template>
             </tbody>
           </table>
 
@@ -121,8 +250,13 @@
 <script>
 import Pagination from 'vue-2-bulma-pagination'
 import Cooperate from './Cooperate'
-import {mapActions, mapGetters} from 'vuex'
+import {mapActions, mapGetters, mapMutations} from 'vuex'
+import {createHelpers} from 'vuex-map-fields';
 
+const {mapFields, mapMultiRowFields} = createHelpers({
+  getterType: 'products/getField',
+  mutationType: 'products/updateField',
+});
 export default {
   components: {Pagination, Cooperate},
   data() {
@@ -144,6 +278,12 @@ export default {
       selectedStatus: 'dataInfo/checkStatus',
       categories: 'dataInfo/categories',
     }),
+    ...mapFields([
+      'checkMinPercent',
+      'checkMaxPercent',
+      'addFilterPercent',
+    ]),
+    ...mapMultiRowFields(['products'])
   },
   methods: {
     ...mapActions({
@@ -154,6 +294,28 @@ export default {
       checksStatus: 'products/checksStatus',
       loadCategories: 'dataInfo/loadCategories',
     }),
+    ...mapMutations({
+      changeOptionValue: 'products/changeOptionValue'
+    }),
+    changeOption(name, productId, optionI, optionValI) {
+      this.changeOptionValue({
+        name: name,
+        id: productId,
+        option: optionI,
+        optionVal: optionValI,
+        value: event.target.value
+      })
+    },
+    changeProductStatus(data) {
+      console.log(data.status)
+      data.status = data.status == '1' ? '0' : '1'
+    },
+    changePrice(id) {
+      let cost = parseFloat(this.products[id].cost)
+      let percent = parseFloat(this.products[id].cost_percentage)
+      let price = cost + (cost / 100 * percent)
+      this.products[id].price = (price || 0).toFixed(4)
+    },
     checkStatus() {
       this.checksStatus(event.target.value)
     },
@@ -249,5 +411,62 @@ export default {
 
 .select select[multiple] option:last-child {
   border-bottom: none;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider_checkbox {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider_checkbox:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider_checkbox {
+  background-color: #2196F3;
+}
+
+input:focus + .slider_checkbox {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider_checkbox:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+tr.tr_details > td {
+  background: aliceblue;
+  padding-bottom: .9rem !important;
 }
 </style>
